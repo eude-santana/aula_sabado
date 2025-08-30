@@ -27,4 +27,12 @@ class BoardManager{
 
     addCard(card){this.node.appendChild(card)}
 
+    genRamdonList(size){
+        let list = Array(size/2).fill().map((_,i)=>i+1);
+        console.log({list});
+
+        list = [...list, ...list].sort(()=>Math.random()-0.5);
+        return list;
+    }
+
 }
