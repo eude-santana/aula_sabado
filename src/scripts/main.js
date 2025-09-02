@@ -26,6 +26,16 @@ for (let i = 4; i <= 10; i+=2) {
 start.addEventListener('click', ()=>{
     menu.classList.add('hidden');
     board.node.classList.remove('hidden');
+    board.fill(select.value);
 });
 
-start.click();
+board.node.addEventListener('click', ()=>{
+    if(board.check()){
+        setTimeout(()=>{
+            menu.classList.remove('hidden');
+            board.node.classList.add('hidden');
+        }, 2000);
+    }
+})
+
+//start.click();
